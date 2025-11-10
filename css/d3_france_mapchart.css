@@ -1,4 +1,3 @@
-
 .axis path,
 .axis line {
     fill: none;
@@ -20,7 +19,7 @@
 
 
 .countries {
-    fill: #ededed;
+    fill: #e8e8e8;
     stroke: #CCC;
     stroke-width: 2px;
 }
