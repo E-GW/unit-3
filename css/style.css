@@ -1,4 +1,15 @@
 
+/* Webpage */
+h1 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+
+/* Map */
 .axis path,
 .axis line {
     fill: none;
@@ -11,13 +22,6 @@
     font-family: sans-serif;
     font-size: 0.9em;
 }
-
-.title {
-    font-family: sans-serif;
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
 
 .countries {
     fill: #ededed;
@@ -36,8 +40,11 @@
     margin: 10px 0 0 20px;
 }
 
+
+
+/* Chart */
 .chart {
-    background-color: rgba(128,128,128,.2);
+    background-color: rgba(128, 128, 128, 0.2);
     border: medium solid #999;
     float: right;
     margin: 10px 20px 0 0;
@@ -52,4 +59,28 @@
     font-family: sans-serif;
     font-size: 1.5em;
     font-weight: bold;
+}
+
+.bars {
+    stroke: none;
+    opacity: 0.95;
+    transition: all 0.3s ease;
+}
+
+.bars:hover {
+    opacity: 1;
+    stroke: #000;
+    stroke-width: 1px;
+}
+
+.tooltip {
+    position: absolute;
+    text-align: center;
+    padding: 6px;
+    font: 12px sans-serif;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 4px;
+    pointer-events: none;
+    z-index: 10;
 }
