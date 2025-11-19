@@ -1,86 +1,181 @@
+/* Typography */
+body {
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  color: #222;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
 
-/* Webpage */
 h1 {
-    text-align: center;
+  text-align: center;
+  font-size: 2.2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.3rem;
 }
 
 h3 {
-    text-align: center;
+  text-align: center;
+  font-size: 1.25rem;
+  color: #555;
+  margin-bottom: 0.5rem;
 }
 
-
-/* Map */
-.axis path,
-.axis line {
-    fill: none;
-    stroke: black;
-    stroke-width: 1px;
-    shape-rendering: crispEdges;
+.subtitle {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #777;
+  margin-bottom: -0.5rem;
 }
 
-.axis text {
-    font-family: sans-serif;
-    font-size: 0.9em;
+/* Layout Container */
+.visualization-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
-.countries {
-    fill: #ededed;
-    stroke: #CCC;
-    stroke-width: 2px;
-}
-
-.regions {
-    stroke: #000;
-    stroke-width: 0.5px;
-    stroke-linecap: round;
+/* Responsive SVGs */
+.map, .chart {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  padding: 10px;
 }
 
 .map {
-    border: medium solid #999;
-    margin: 10px 0 0 20px;
+  flex: 1 1 48%;
+  min-width: 300px;
 }
 
-
-
-/* Chart */
 .chart {
-    background-color: rgba(128, 128, 128, 0.2);
-    border: medium solid #999;
-    float: right;
-    margin: 10px 20px 0 0;
+  flex: 1 1 48%;
+  min-width: 300px;
 }
 
-.numbers {
-    fill: white;
-    font-family: sans-serif;
+/* Dropdown Styling */
+#attributeSelector {
+  position: absolute;
+  top: 210px;
+  left: 20px;
+  padding: 8px 12px;
+  font-size: 15px;
+  background: #fff;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 10;
 }
 
+/* Chart Titles */
 .chartTitle {
-    font-family: sans-serif;
-    font-size: 1.5em;
-    font-weight: bold;
+  font-size: 1.4rem;
+  font-weight: bold;
+  fill: #333;
+  font-family: inherit;
 }
 
+/* Tooltips */
+.tooltip {
+  position: absolute;
+  padding: 8px 10px;
+  font-size: 13px;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 20;
+}
+
+/* Legend */
+.legendGroup {
+  font-family: sans-serif;
+}
+
+.legendBackground {
+  fill: #ffffffee;
+  stroke: #aeaeae;
+  stroke-width: 1;
+  rx: 8;
+  ry: 8;
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.15));
+}
+
+.legendTitle {
+  font-weight: bold;
+  font-size: 14px;
+  fill: #222;
+}
+
+.legendItem text {
+  font-size: 13px;
+  fill: #333;
+}
+
+/* Regions */
+.region {
+  stroke: #333;
+  stroke-width: 0.5px;
+  transition: all 0.2s ease;
+}
+
+.region:hover {
+  stroke: #000;
+  stroke-width: 1.5px;
+}
+
+/* Bar Styles */
 .bars {
-    stroke: none;
-    opacity: 0.95;
-    transition: all 0.3s ease;
+  stroke: none;
+  opacity: 0.95;
+  transition: all 0.3s ease;
 }
 
 .bars:hover {
-    opacity: 1;
-    stroke: #000;
-    stroke-width: 1px;
+  stroke: #000;
+  stroke-width: 1px;
+  opacity: 1;
 }
 
-.tooltip {
-    position: absolute;
-    text-align: center;
-    padding: 6px;
-    font: 12px sans-serif;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    border-radius: 4px;
-    pointer-events: none;
-    z-index: 10;
+/* Axis */
+.axis path,
+.axis line {
+  stroke: #444;
+  shape-rendering: crispEdges;
+}
+
+.axis text {
+  font-size: 12px;
+  fill: #333;
+}
+
+/* Grid Lines */
+.horizontalGrid {
+  stroke: #ccc;
+  stroke-dasharray: 2, 2;
+}
+
+/* Responsive Media Query */
+@media (max-width: 768px) {
+  .visualization-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .map, .chart {
+    flex: 1 1 100%;
+    max-width: 95%;
+  }
+
+  #attributeSelector {
+    top: 10px;
+    left: 10px;
+  }
 }
