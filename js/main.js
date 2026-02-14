@@ -236,7 +236,7 @@
                 let csvData = data[0];
                 const vehiclesTopo = data[1];
 
-                // Precompute numeric values on csvData using safe keys
+                // Precompute numeric values on csvData using safe keys  uuu
                 csvData.forEach(row => {
                     attrArray.forEach(attr => {
                         const raw = row[attr.label]; // original column header
